@@ -49,6 +49,7 @@ fun main() {
     println("lowest quantity : ${lowestQuantity?.name}")
     println("Total grocery quantity : $sumQuantity")
     println("Total grocery price : $$totalPrice")
+    println("************************")
     println("Veggies")
     for(i in vegetables)println("${i.name}, $${i.unitPrice}, ${i.category}, ${i.quantity}")
     println("************************")
@@ -58,6 +59,27 @@ fun main() {
     println("Not Frozen")
     for(i in notFrozen)println("${i.name}, $${i.unitPrice}, ${i.category}, ${i.quantity}")
     println("************************")
+
+    val ints = listOf(1, 2, 3, 4)
+    val doubleInts = ints.map { it * 2 }
+    val groceryNames = groceries.map { it.name }
+    val halfUnitPrice = groceries.map { it.unitPrice * 0.5 }
+    val newPrices = groceries.filter{it.unitPrice > 3.0}.map { it.unitPrice * 2 }
+    println(doubleInts)
+    println(groceryNames)
+    println(halfUnitPrice)
+    println(newPrices)
+
+    groceries.forEach { println("${ it.name }, K${ it.unitPrice } ${it.category}") }
+    /*
+    Which code is more concise "for" or "forEach"
+    for (item in groceries) if (item.unitPrice > 3.0) println(item.name)
+    groceries.filter { it.unitPrice > 3.0 }.forEach { println(it.name) }
+    */
+
+    var itemNames = ""
+    groceries.forEach{ itemNames += "${it.name} "}
+    println("itemNames: $itemNames")
 
 
 }
