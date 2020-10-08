@@ -81,6 +81,8 @@ fun main() {
     groceries.forEach{ itemNames += "${it.name} "}
     println("itemNames: $itemNames")
 
+    val groupByCategory = groceries.groupBy { it.category }
+
 
 }
 
