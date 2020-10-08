@@ -82,6 +82,7 @@ fun main() {
     println("itemNames: $itemNames")
 
     val groupByCategory = groceries.groupBy { it.category }
+    println("Category: $groupByCategory")
 
 
 }
