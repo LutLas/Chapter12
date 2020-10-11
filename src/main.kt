@@ -89,9 +89,28 @@ fun main() {
 
 
     }
-    val sumOfInts = ints.fold(0){runningSum, item -> runningSum + item}
+    val ints2 = listOf(1, 2, 3)
+    val sumOfInts = ints2.fold(0){runningSum, item -> runningSum + item}
     println(sumOfInts)
 
+    val ints3 = listOf(2, 3, 4)
+    val prodOfInts2 = ints3.reduce{runningProd, item -> runningProd * item}
+    println(prodOfInts2)
+
+    val ints4 = listOf(1, 2, 3)
+    val divOfInts = ints4.fold(12){runningDiv, item -> runningDiv / item}
+    println(divOfInts)
+
+    val ints5 = listOf(2, 3, 4)
+    val prodOfInts = ints5.foldRight(1){runningProd, item -> runningProd * item}
+    println(prodOfInts)
+
+    /*val strings = listOf("1", "2", "3")*/
+    val sumOfStrings = groceries.fold("Name:"){runningConcat, item -> runningConcat + " ${item.name}"}
+    println(sumOfStrings)
+
+    val subOfInts = groceries.fold(50.0){change, item -> change - (item.unitPrice * item.quantity)}
+    println(subOfInts)
 }
 
 data class Grocery(
