@@ -85,9 +85,12 @@ fun main() {
     println("Category: $groupByCategory")
     groceries.groupBy { it.category }.forEach {
         println(it.key)
-        it.value.forEach { println("   ${it.name}") }
-    }
+        /*it.value.forEach { println("   ${it.name}") }*/
 
+
+    }
+    val sumOfInts = ints.fold(0){runningSum, item -> runningSum + item}
+    println(sumOfInts)
 
 }
 
